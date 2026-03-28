@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Mozart's Musical Adventure</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: monospace;
+      touch-action: none;
+    }
+
+    #game-wrapper {
+      position: relative;
+      width: min(768px, 100vw);
+      aspect-ratio: 16 / 9;
+    }
+
+    #gameCanvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      image-rendering: pixelated;
+      image-rendering: crisp-edges;
+      cursor: pointer;
+      outline: none;
+      border: 2px solid #333;
+    }
+
+    /* ── Touch / on-screen controls ──────────────────────────────────── */
+    #touch-controls {
+      display: none;  /* shown only when touch device detected */
+      position: absolute;
+      bottom: 8px;
+      left: 0;
+      right: 0;
+      pointer-events: none;
+    }
+
+    .touch-btn {
+      position: absolute;
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.18);
+      border: 2px solid rgba(255,255,255,0.35);
+      color: #fff;
+      font-size: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: all;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    #btn-left  { left: 10px;  bottom: 0; }
+    #btn-right { left: 76px;  bottom: 0; }
+    #btn-jump  { right: 10px; bottom: 0; }
+
+    /* Show touch controls on touch devices */
+    @media (pointer: coarse) {
+      #touch-controls { display: block; }
+    }
+
+    #info {
+      color: #555;
+      font-size: 11px;
+      margin-top: 4px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div id="game-wrapper">
+  <canvas id="gameCanvas" width="768" height="432" tabindex="0">
+    Your browser does not support HTML5 Canvas. Please use a modern browser.
+  </canvas>
+
+  <!-- On-screen touch controls -->
+  <div id="touch-controls">
+    <div class="touch-btn" id="btn-left">◀</div>
+    <div class="touch-btn" id="btn-right">▶</div>
+    <div class="touch-btn" id="btn-jump">▲</div>
+  </div>
+</div>
+
+<div id="info">Arrow keys / WASD to move &nbsp;|&nbsp; Space / Up to jump &nbsp;|&nbsp; ESC = pause &nbsp;|&nbsp; M = music &nbsp;|&nbsp; L = language</div>
+
+<noscript>
+  <p style="color:#fff;text-align:center;padding:20px;">
+    Please enable JavaScript to play Mozart's Musical Adventure.
+  </p>
+</noscript>
+
+<!-- Load order matters: i18n → audio → game -->
+<script src="i18n.js"></script>
+<script src="audio.js"></script>
+<script src="game.js"></script>
+
+</body>
+</html>
