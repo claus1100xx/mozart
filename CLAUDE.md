@@ -47,6 +47,8 @@ Sections are separated by `═══` dividers:
 
 **Game states:** `MENU`, `PLAYING`, `PAUSED`, `GAMEOVER`, `WIN`, `QUIZ`, `PIANO_CHALLENGE`
 
+**Always use `setGameState(newState)` — never assign `gameState` directly.** `setGameState()` handles side effects: music transitions, hiding/showing touch controls, etc.
+
 ### audio.js — module pattern, exposed as `window.AudioEngine`
 
 - `FREQ` table maps note names (e.g. `'Gs4'`, `'Bb5'`) to Hz
