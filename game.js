@@ -1457,7 +1457,7 @@ function enterQuiz(nextLevelIdx) {
   quizState.summaryTimer   = 0;
   quizState.pendingLevelIdx = nextLevelIdx;
 
-  gameState = 'QUIZ';
+  setGameState('QUIZ');
 }
 
 function answerQuiz(choiceIdx) {
@@ -1642,7 +1642,7 @@ function enterPianoChallenge(nextLevelIdx) {
   pianoState.celebrationTimer = 0;
   pianoState.failTimer        = 0;
   pianoState.pendingLevelIdx  = nextLevelIdx;
-  gameState = 'PIANO_CHALLENGE';
+  setGameState('PIANO_CHALLENGE');
 }
 
 function updatePianoChallenge(dt) {
