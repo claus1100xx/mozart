@@ -2033,7 +2033,7 @@ function handleCanvasClick(e) {
   }
 
   // Quiz answer click
-  if (gameState === 'QUIZ' && quizState.feedbackTimer === 0 && quizState.selectedAnswer === null) {
+  if (gameState === 'QUIZ' && quizState.feedbackTimer <= 0 && quizState.selectedAnswer === null) {
     const rects = getQuizAnswerRects();
     for (let i = 0; i < rects.length; i++) {
       const r = rects[i];
