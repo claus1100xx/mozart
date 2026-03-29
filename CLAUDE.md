@@ -6,6 +6,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 "Mozart's Musical Adventure" — a zero-install 8-bit browser platformer. Open `index.html` directly in any browser. No build step, no dependencies, no CDN.
 
+## Workflow
+
+After every code change: check syntax, commit, and push to GitHub (`git push`).
+
 ## Checking for syntax errors
 
 ```bash
