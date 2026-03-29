@@ -861,6 +861,8 @@ function checkExit() {
 // ═══════════════════════════════════════════════════════════════════════════
 function setGameState(newState) {
   gameState = newState;
+  const tc = document.getElementById('touch-controls');
+  if (tc) tc.style.display = (newState === 'PLAYING') ? '' : 'none';
   if (newState === 'PLAYING') {
     // Song already started by loadLevel or resume
   } else if (newState === 'MENU') {
