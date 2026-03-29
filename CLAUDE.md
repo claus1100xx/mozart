@@ -38,7 +38,12 @@ Sections are separated by `═══` dividers:
 - **RENDERING** — `render()` draws everything; camera offset stored in `camX`
 - **QUIZ SYSTEM** — triggered after Level 1; questions seeded from Mozart facts shown during gameplay (`collectedFacts[]`)
 - **PIANO CHALLENGE** — triggered after Level 2; state machine: `DEMO → INPUT → SUCCESS`; letter keys C D E F G A B map to notes C4–B4 (C5 is click-only); demo sequence is Eine Kleine opening: G G D G E D
-- **INPUT** — `handleKeyDown()` dispatches by `gameState`; quiz uses KeyA/B/C/D, piano uses KeyC/D/E/F/G/A/B
+- **INPUT** — `handleKeyDown()` dispatches by `gameState`
+  - Movement: Arrow keys / WASD; jump: Space / Up / W
+  - Global: `ESC` = pause, `M` = toggle mute, `L` = toggle language
+  - Quiz: `A`/`B`/`C`/`D` select answers
+  - Piano: `C`/`D`/`E`/`F`/`G`/`A`/`B` play notes C4–B4; C5 is mouse-click only
+- **TOUCH CONTROLS** — on-screen ◀ ▶ ▲ buttons in `#touch-controls` div; shown automatically via `@media (pointer: coarse)`
 
 **Game states:** `MENU`, `PLAYING`, `PAUSED`, `GAMEOVER`, `WIN`, `QUIZ`, `PIANO_CHALLENGE`
 
