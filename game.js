@@ -913,7 +913,7 @@ function loadLevel(idx) {
 
   AudioEngine.stopSong();
   AudioEngine.playSong(currentLevel.song);
-  gameState = 'PLAYING';
+  setGameState('PLAYING');
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
