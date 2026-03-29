@@ -13,7 +13,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      min-height: 100vh;
+      height: 100dvh;
       overflow: hidden;
       font-family: monospace;
       touch-action: none;
@@ -21,7 +21,7 @@
 
     #game-wrapper {
       position: relative;
-      width: min(768px, 100vw);
+      width: min(768px, 100vw, calc(100dvh * 16 / 9));
       aspect-ratio: 16 / 9;
     }
 
@@ -77,6 +77,10 @@
       font-size: 11px;
       margin-top: 4px;
       text-align: center;
+    }
+
+    @media (max-height: 480px), (max-width: 480px) {
+      #info { display: none; }
     }
   </style>
 </head>
