@@ -1485,6 +1485,7 @@ function updateQuiz(dt) {
   if (quizState.feedbackTimer > 0) {
     quizState.feedbackTimer -= dt;
     if (quizState.feedbackTimer <= 0) {
+      quizState.feedbackTimer = 0;
       quizState.currentIdx++;
       quizState.selectedAnswer = null;
       if (quizState.currentIdx >= quizState.total) {
